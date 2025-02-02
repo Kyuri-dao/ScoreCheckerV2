@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScoreCheckerV2.Views.HistoryPage"
+             xmlns:vm="clr-namespace:ScoreCheckerV2.ViewModels"
+             Title="履歴">
+
+    <ContentPage.BindingContext>
+        <vm:MainVm/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <Grid>
+            <VerticalStackLayout>
+                <Label
+                    Text="履歴は最大25件保存されます。"
+                    FontSize="18"
+                    HorizontalTextAlignment="Center"/>
+                <Button
+                    Text="履歴を全て削除"
+                    TextColor="Red"
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    BackgroundColor="White"/>
+            </VerticalStackLayout>
+
+            <CollectionView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label
+                                    Text="テスト"/>
+                            </HorizontalStackLayout>
+
+                            <BoxView
+                                Color="Gray"
+                                HeightRequest="2"/>
+                        </VerticalStackLayout>    
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScoreCheckerV2.Views.SettingPage"
+             Title="設定"
+             xmlns:vm="clr-namespace:ScoreCheckerV2.ViewModels"
+             FlyoutItem.IsVisible="True"
+             Shell.NavBarHasShadow="True"
+             Shell.BackgroundColor="WhiteSmoke">
+
+    <ContentPage.BindingContext>
+        <vm:MainVm/>
+    </ContentPage.BindingContext>
+
+
+    <ScrollView BackgroundColor="WhiteSmoke">
+        <VerticalStackLayout>
+            <Label
+                Text="履歴"
+                FontSize="25"
+                Margin="20"/>
+            <HorizontalStackLayout Margin="20" HorizontalOptions="Center">
+                <Label
+                    Text="履歴を保存"
+                    FontSize="18"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"/>
+                <Switch
+                    IsToggled="True"
+                    OnColor="LightBlue"
+                    ThumbColor="DodgerBlue"
+                    HorizontalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <Label
+                Text="枠色"
+                FontSize="25"
+                Margin="20"/>
+
+            <HorizontalStackLayout Margin="20" HorizontalOptions="Center">
+                <Label
+                    Text="枠色を追加"
+                    FontSize="18"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"/>
+                <Entry
+                    Placeholder="#example"
+                    FontSize="14"
+                    MaxLength="7"/>
+            </HorizontalStackLayout>
+
+            <Button
+                Text="追加された枠色を削除"
+                TextColor="Red"
+                FontSize="14"
+                FontAttributes="Bold"
+                BackgroundColor="WhiteSmoke"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
