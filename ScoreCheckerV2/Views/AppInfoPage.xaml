@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScoreCheckerV2.Views.AppInfoPage"
+             xmlns:vm="clr-namespace:ScoreCheckerV2.ViewModels"
+             Title="アプリ情報">
+
+    <ContentPage.BindingContext>
+        <vm:MainVm/>
+    </ContentPage.BindingContext>
+    
+    <VerticalStackLayout>
+        <HorizontalStackLayout Margin="18" HorizontalOptions="Center">
+            <Label
+                Text="バージョン"
+                TextColor="Black"
+                FontSize="20"
+                VerticalTextAlignment="Center"
+                Margin="10"/>
+
+            <Label
+                Text="0.0.0.1"
+                TextColor="Black"
+                FontSize="15"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="End"
+                Margin="10"/>
+        </HorizontalStackLayout>
+        
+        <HorizontalStackLayout Margin="18" HorizontalOptions="Center">
+            <Label
+                Text="更新日時"
+                TextColor="Black"
+                FontSize="20"
+                VerticalTextAlignment="Center"
+                Margin="10"/>
+
+            <Label
+                Text="2025/02/14"
+                TextColor="Black"
+                FontSize="15"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="End"
+                Margin="10"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Margin="18" HorizontalOptions="Center">
+            <Label
+                Text="リポジトリ"
+                TextColor="Black"
+                FontSize="20"
+                VerticalTextAlignment="Center"
+                Margin="10"/>
+
+            <Label
+                Text="GitHub(外部サイト)"
+                TextColor="DodgerBlue"
+                FontSize="15"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="End"
+                Margin="10">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ClickedJumpReposCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </HorizontalStackLayout>
+
+        <Label
+            Text="Created by Kyuri-dao"
+            TextColor="LightSeaGreen"
+            FontSize="15"
+            VerticalTextAlignment="End"
+            HorizontalTextAlignment="Center"/>
+
+
+    </VerticalStackLayout>
+</ContentPage>

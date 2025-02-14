@@ -14,109 +14,119 @@
 
 
     <ScrollView HorizontalOptions="Center" BackgroundColor="WhiteSmoke">
-        <CollectionView ItemsSource="{Binding SubjectTables}" Margin="12">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Border
-                            Stroke="{Binding ColorCode}"
-                            StrokeThickness="4"
-                            Background="White"
-                            Padding="16,8"
-                            Margin="12">
+        <Grid>
+            <CollectionView ItemsSource="{Binding SubjectTables}" Margin="15">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border
+                                Stroke="{Binding ColorCode}"
+                                StrokeThickness="4"
+                                Background="White"
+                                Padding="16,8"
+                                Margin="12">
 
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="10"/>
-                        </Border.StrokeShape>
-                        <VerticalStackLayout>
-                            <HorizontalStackLayout>
-                                <Entry
-                                    Placeholder="科目名"
-                                    FontSize="18"
-                                    Text="{Binding SubjectName}"
-                                    WidthRequest="200"
-                                    ReturnType="Done"
-                                    HorizontalOptions="Start"/>
-
-                                <ImageButton
-                                    Source="adjustment.svg"
-                                    WidthRequest="20"
-                                    HorizontalOptions="Start"
-                                    Margin="5"/>
-
-                            </HorizontalStackLayout>
-
-
-                            <HorizontalStackLayout>
-                                <Entry
-                                    Placeholder="前期中間"
-                                    FontSize="14"
-                                    Text="{Binding FirstQuarter, Mode=TwoWay}"
-                                    MaxLength="3"
-                                    ClearButtonVisibility="WhileEditing"
-                                    Keyboard="Numeric"
-                                    ReturnType="Done"/>
-
-                                <Label
-                                    Text="+"
-                                    VerticalTextAlignment="Center"/>
-
-                                <Entry
-                                    Placeholder="前期期末"
-                                    FontSize="14"
-                                    Text="{Binding SecondQuarter, Mode=TwoWay}"
-                                    MaxLength="3"
-                                    ClearButtonVisibility="WhileEditing"
-                                    Keyboard="Numeric"
-                                    ReturnType="Done"/>
-
-                                <Label
-                                    Text="+"
-                                    VerticalTextAlignment="Center"/>
-
-                                <Entry
-                                    Placeholder="後期中間"
-                                    FontSize="14"
-                                    Text="{Binding ThirdQuarter, Mode=TwoWay}"
-                                    MaxLength="3"
-                                    ClearButtonVisibility="WhileEditing"
-                                    Keyboard="Numeric"
-                                    ReturnType="Done"/>
-
-                                <Label
-                                    Text="+"
-                                    VerticalTextAlignment="Center"/>
-
-                                <Entry
-                                    Placeholder="後期中間"
-                                    FontSize="14"
-                                    Text="{Binding FourthQuarter, Mode=TwoWay}"
-                                    MaxLength="3"
-                                    ClearButtonVisibility="WhileEditing"
-                                    Keyboard="Numeric"
-                                    ReturnType="Done"/>
-
-                                <Button
-                                    Text="計算"
-                                    Command="{Binding ClickedCalCommand}"
-                                    FontSize="15"
-                                    HorizontalOptions="End"
-                                    TextColor="DodgerBlue"
-                                    BackgroundColor="White"/>
-                            </HorizontalStackLayout>
-
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="10"/>
+                            </Border.StrokeShape>
                             <VerticalStackLayout>
-                                <Label
-                                    Text="{Binding ReturnedAnswerStr}"
-                                    HorizontalTextAlignment="End"/>
+                                <HorizontalStackLayout>
+                                    <Entry
+                                        Placeholder="科目名"
+                                        FontSize="18"
+                                        Text="{Binding SubjectName}"
+                                        WidthRequest="200"
+                                        ReturnType="Done"
+                                        HorizontalOptions="Start"/>
+
+                                    <ImageButton
+                                        Source="adjustment.svg"
+                                        WidthRequest="20"
+                                        HorizontalOptions="Start"
+                                        Margin="5"/>
+
+                                </HorizontalStackLayout>
+
+
+                                <HorizontalStackLayout>
+                                    <Entry
+                                        Placeholder="前期中間"
+                                        FontSize="14"
+                                        Text="{Binding FirstQuarter, Mode=TwoWay}"
+                                        MaxLength="3"
+                                        ClearButtonVisibility="WhileEditing"
+                                        Keyboard="Numeric"
+                                        ReturnType="Done"/>
+
+                                    <Label
+                                        Text="+"
+                                        VerticalTextAlignment="Center"/>
+
+                                    <Entry
+                                        Placeholder="前期期末"
+                                        FontSize="14"
+                                        Text="{Binding SecondQuarter, Mode=TwoWay}"
+                                        MaxLength="3"
+                                        ClearButtonVisibility="WhileEditing"
+                                        Keyboard="Numeric"
+                                        ReturnType="Done"/>
+
+                                    <Label
+                                        Text="+"
+                                        VerticalTextAlignment="Center"/>
+
+                                    <Entry
+                                        Placeholder="後期中間"
+                                        FontSize="14"
+                                        Text="{Binding ThirdQuarter, Mode=TwoWay}"
+                                        MaxLength="3"
+                                        ClearButtonVisibility="WhileEditing"
+                                        Keyboard="Numeric"
+                                        ReturnType="Done"/>
+
+                                    <Label
+                                        Text="+"
+                                        VerticalTextAlignment="Center"/>
+
+                                    <Entry
+                                        Placeholder="後期中間"
+                                        FontSize="14"
+                                        Text="{Binding FourthQuarter, Mode=TwoWay}"
+                                        MaxLength="3"
+                                        ClearButtonVisibility="WhileEditing"
+                                        Keyboard="Numeric"
+                                        ReturnType="Done"/>
+
+                                    <Button
+                                        Text="計算"
+                                        Command="{Binding ClickedCalCommand}"
+                                        FontSize="15"
+                                        HorizontalOptions="End"
+                                        TextColor="DodgerBlue"
+                                        BackgroundColor="White"/>
+                                </HorizontalStackLayout>
+
+                                <VerticalStackLayout>
+                                    <Label
+                                        Text="{Binding ReturnedAnswerStr}"
+                                        HorizontalTextAlignment="End"/>
+                                </VerticalStackLayout>
+
                             </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-                        </VerticalStackLayout>
-                    </Border>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-
-
+            <Button
+                Text="科目追加"
+                Margin="10"
+                Command="{Binding ClickedAddAreaCommand}"
+                VerticalOptions="End"
+                BackgroundColor="DodgerBlue"
+                HeightRequest="50"/>
+        </Grid>
+        
+        
     </ScrollView>
 
 </ContentPage>

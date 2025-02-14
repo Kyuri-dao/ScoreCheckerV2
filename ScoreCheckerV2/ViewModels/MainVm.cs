@@ -15,34 +15,54 @@ namespace ScoreCheckerV2.ViewModels
         [ObservableProperty]
         private ObservableCollection<SubjectTable> subjectTables;
 
-        [ObservableProperty]
-        private ObservableCollection<HistoryTable> historyList;
+        //[ObservableProperty]
+        //private ObservableCollection<HistoryTable> historyList;
+
+        
 
         public MainVm()
         {
 
 
-            SubjectTables = new ObservableCollection<SubjectTable>()
-            {
-                new(){Key=1, ColorCode=Brush.BlueViolet, SubjectName="科目"},
-                new(){Key=2, ColorCode=Brush.SpringGreen, SubjectName="科目"},
-                new(){Key=3, ColorCode=Brush.Gold, SubjectName="科目"},
-                new(){Key=4, ColorCode=Brush.Orange, SubjectName="科目"},
-                new(){Key=5, ColorCode=Brush.Chartreuse, SubjectName="科目"},
-                new(){Key=6, ColorCode=Brush.Crimson, SubjectName="科目"}
+            SubjectTables = new ObservableCollection<SubjectTable>() // 計算エリアをリスト化
+            { // ColorCode = Brush.example, SubjectName = "科目" サブジェクトネームは初期化のため科目を代入
+                new(){ColorCode=Brush.BlueViolet, SubjectName="科目"},
+                new(){ColorCode=Brush.SpringGreen, SubjectName="科目"},
+                new(){ColorCode=Brush.Gold, SubjectName="科目"},
+                new(){ColorCode=Brush.Orange, SubjectName="科目"},
+                new(){ColorCode=Brush.Chartreuse, SubjectName="科目"},
+                new(){ColorCode=Brush.Crimson, SubjectName="科目"}
             };
 
             
-
-            
-           
         }
+
+        public void AddArea() // 科目追加メゾット
+        {
+            SubjectTables.Add(new SubjectTable
+            {
+                ColorCode = Brush.CadetBlue,
+                SubjectName = "科目"
+            });
+        }
+
+
+        [RelayCommand]
+        private void OnClickedAddArea() // 科目追加コマンド
+        {
+            AddArea();
+        }
+
+        [RelayCommand]
+        private static void OnClickedJumpRepos()
+        {
+            Launcher.OpenAsync(new Uri("https://github.com/Kyuri-dao/ScoreCheckerV2"));
+        }
+
     }
 
-    public partial class SubjectTable : ObservableObject
+    public partial class SubjectTable : ObservableObject // SubjectTableの定義
     {
-        [ObservableProperty]
-        private int? key;
 
         [ObservableProperty]
         private Brush? colorCode;
@@ -89,12 +109,15 @@ namespace ScoreCheckerV2.ViewModels
             Preferences.Default.Set("subject_score", ReturnedAnswerStr);
         }
 
+        
+
         [RelayCommand]
         private void OnClickedCal()
         {
             Calculation();
         }
 
+        
         
 
         
@@ -123,9 +146,9 @@ namespace ScoreCheckerV2.ViewModels
 
         
 
-    public class ColorSet
+    public class ColorSet // 色の設定用class。現在は未使用。
     {
-        public void Color()
+        public static void Color()
         {
             Random rnd = new Random();
             int rndVal = rnd.Next(1, 11);

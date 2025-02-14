@@ -29,7 +29,15 @@
             Title="設定"
             ContentTemplate="{DataTemplate views:SettingPage}"
             Route="SettingPage"/>
+    </FlyoutItem>
 
+    <FlyoutItem
+        Title="アプリ情報">
+        
+        <ShellContent
+            Title="アプリ情報"
+            ContentTemplate="{DataTemplate views:AppInfoPage}"
+            Route="AppInfoPage"/>
     </FlyoutItem>
 
 
