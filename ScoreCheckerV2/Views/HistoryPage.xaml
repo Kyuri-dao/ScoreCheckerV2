@@ -9,11 +9,12 @@
         <vm:MainVm/>
     </ContentPage.BindingContext>
 
-    <ScrollView>
+    <ScrollView BackgroundColor="WhiteSmoke">
         <Grid>
             <VerticalStackLayout>
                 <Label
                     Text="履歴は最大25件保存されます。"
+                    TextColor="Black"
                     FontSize="18"
                     HorizontalTextAlignment="Center"/>
                 <Button

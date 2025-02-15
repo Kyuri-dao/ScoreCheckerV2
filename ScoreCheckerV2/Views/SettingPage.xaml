@@ -17,18 +17,18 @@
         <VerticalStackLayout>
             <Label
                 Text="履歴"
+                TextColor="Black"
                 FontSize="25"
                 Margin="20"/>
             <HorizontalStackLayout Margin="20" HorizontalOptions="Center">
                 <Label
                     Text="履歴を保存"
+                    TextColor="Black"
                     FontSize="18"
                     HorizontalTextAlignment="Center"
                     VerticalTextAlignment="Center"/>
                 <Switch
                     IsToggled="True"
-                    OnColor="LightBlue"
-                    ThumbColor="DodgerBlue"
                     HorizontalOptions="Center"/>
             </HorizontalStackLayout>
 
@@ -40,12 +40,14 @@
             <HorizontalStackLayout Margin="20" HorizontalOptions="Center">
                 <Label
                     Text="枠色を追加"
+                    TextColor="Black"
                     FontSize="18"
                     HorizontalTextAlignment="Center"
                     VerticalTextAlignment="Center"/>
                 <Entry
                     Placeholder="#example"
                     FontSize="14"
+                    TextColor="Black"
                     MaxLength="7"/>
             </HorizontalStackLayout>
 

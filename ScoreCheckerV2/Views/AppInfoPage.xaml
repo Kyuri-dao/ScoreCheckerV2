@@ -9,7 +9,7 @@
         <vm:MainVm/>
     </ContentPage.BindingContext>
     
-    <VerticalStackLayout>
+    <VerticalStackLayout BackgroundColor="WhiteSmoke">
         <HorizontalStackLayout Margin="18" HorizontalOptions="Center">
             <Label
                 Text="バージョン"

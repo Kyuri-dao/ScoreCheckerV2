@@ -33,6 +33,7 @@
                                     <Entry
                                         Placeholder="科目名"
                                         FontSize="18"
+                                        TextColor="Black"
                                         Text="{Binding SubjectName}"
                                         WidthRequest="200"
                                         ReturnType="Done"
@@ -50,7 +51,8 @@
                                 <HorizontalStackLayout>
                                     <Entry
                                         Placeholder="前期中間"
-                                        FontSize="14"
+                                        FontSize="12"
+                                        TextColor="Black"
                                         Text="{Binding FirstQuarter, Mode=TwoWay}"
                                         MaxLength="3"
                                         ClearButtonVisibility="WhileEditing"
@@ -59,11 +61,13 @@
 
                                     <Label
                                         Text="+"
+                                        TextColor="Black"
                                         VerticalTextAlignment="Center"/>
 
                                     <Entry
                                         Placeholder="前期期末"
-                                        FontSize="14"
+                                        FontSize="12"
+                                        TextColor="Black"
                                         Text="{Binding SecondQuarter, Mode=TwoWay}"
                                         MaxLength="3"
                                         ClearButtonVisibility="WhileEditing"
@@ -72,11 +76,13 @@
 
                                     <Label
                                         Text="+"
+                                        TextColor="Black"
                                         VerticalTextAlignment="Center"/>
 
                                     <Entry
                                         Placeholder="後期中間"
-                                        FontSize="14"
+                                        FontSize="12"
+                                        TextColor="Black"
                                         Text="{Binding ThirdQuarter, Mode=TwoWay}"
                                         MaxLength="3"
                                         ClearButtonVisibility="WhileEditing"
@@ -85,31 +91,39 @@
 
                                     <Label
                                         Text="+"
+                                        TextColor="Black"
                                         VerticalTextAlignment="Center"/>
 
                                     <Entry
                                         Placeholder="後期中間"
-                                        FontSize="14"
+                                        FontSize="12"
+                                        TextColor="Black"
                                         Text="{Binding FourthQuarter, Mode=TwoWay}"
                                         MaxLength="3"
                                         ClearButtonVisibility="WhileEditing"
                                         Keyboard="Numeric"
                                         ReturnType="Done"/>
 
+                                    
+                                </HorizontalStackLayout>
+
+                                <HorizontalStackLayout>
                                     <Button
                                         Text="計算"
                                         Command="{Binding ClickedCalCommand}"
-                                        FontSize="15"
-                                        HorizontalOptions="End"
+                                        FontSize="14"
                                         TextColor="DodgerBlue"
-                                        BackgroundColor="White"/>
-                                </HorizontalStackLayout>
-
-                                <VerticalStackLayout>
+                                        BackgroundColor="White"
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="Center"/>
                                     <Label
                                         Text="{Binding ReturnedAnswerStr}"
-                                        HorizontalTextAlignment="End"/>
-                                </VerticalStackLayout>
+                                        TextColor="Black"
+                                        FontSize="14"
+                                        HorizontalTextAlignment="End"
+                                        VerticalOptions="Center"/>
+                                    
+                                </HorizontalStackLayout>
 
                             </VerticalStackLayout>
                         </Border>
